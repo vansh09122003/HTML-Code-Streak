@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Give Her Wings</title>
+        <style>
+            #workspace{
+                position: absolute;
+                top:0;
+                bottom: 0;
+                left: 0;    
+                right: 0;
+                margin:auto;
+                border:1px solid #000000;
+                background-image: url("BG.png");
+            }
+        </style>
+    </head>
+    <body>
+        <canvas width="800px" height="600px" id="workspace"></canvas>
+        <script>
+            var workspace=document.getElementById("workspace");
+            var ctx = workspace.getContext("2d");
+
+            var grad=ctx.createLinearGradient(0,0,300,300);
+            grad.addColorStop(0,"#FF009E");
+            grad.addColorStop(1,"#B900FF");
+
+            //Heading Box
+            ctx.moveTo(175,5);
+            ctx.roundRect(225,20,565,85,30);
+            ctx.strokeStyle=grad;
+            ctx.fillStyle=grad;
+            ctx.stroke();
+            ctx.fill();
+            ctx.closePath();
+
+            //Heading
+            ctx.font="45px Comic Sans MS";
+            ctx.fillStyle="orange";
+            ctx.textAlign="right";
+            ctx.fillText("Help Us Empower Women",775, 75);
+
+            //Punch Line
+            ctx.font="45px Brush Script MT";
+            ctx.fillStyle="#BD00FF";
+            ctx.textAlign="right";
+            ctx.fillText("Women Education is the Key",500, 220);
+
+            ctx.font="45px Brush Script MT";
+            ctx.fillStyle="#BD00FF";
+            ctx.textAlign="right";
+            ctx.fillText("to Development and",500, 260);
+
+            ctx.font="45px Brush Script MT";
+            ctx.fillStyle="#BD00FF";
+            ctx.textAlign="right";
+            ctx.fillText("Prosperity",500, 300);
+
+            //Foundation
+            ctx.font = "25px Fantasy";
+            ctx.fillStyle="#9D3AC0";
+            ctx.textAlign="right";
+            ctx.fillText("-The Mannat Foundation",500, 330);
+
+            //#
+            ctx.font = "25px Fantasy";
+            ctx.fillStyle="#9D3AC0";
+            ctx.textAlign="right";
+            ctx.fillText("#Give_Her_Wings",500, 360);
+
+            //Image Right
+            var rightImage =new Image();
+            rightImage.src='subjectImg.png';
+            rightImage.onload =function(){
+                ctx.drawImage(rightImage,515,178,280,321);    
+            }
+
+            //Foundation Logo
+            var FoundationImage =new Image();
+            FoundationImage.src='Logo.png';
+            FoundationImage.onload =function(){
+                ctx.drawImage(FoundationImage,10,10,200,200);    
+            }
+        </script>
+    </body>
+</html>
