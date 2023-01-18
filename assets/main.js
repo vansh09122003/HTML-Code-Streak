@@ -3,7 +3,7 @@ var config={
     width: 1400,
     height: 800,
     backgroundColor: 0x000000,
-    scene:[Anim3, Anim1, Anim2],
+    scene:[Anim4],
     physics: {
         default: "arcade",
     },

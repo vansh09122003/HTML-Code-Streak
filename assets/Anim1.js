@@ -5,9 +5,9 @@ class Anim1 extends Phaser.Scene{
     preload(){
         this.load.image('bk','assets/Background_2.png');
         this.load.image('rightHand', 'assets/right.png');
-        this.load.image('leftHand','assets/left.png')
+        this.load.image('leftHand','assets/left.png');
         this.load.image('top', 'assets/Top.png');
-        this.load.image('bottom','assets/Bottom.png')
+        this.load.image('bottom','assets/Bottom.png');
     }
     create(){
         this.add.image(500,400,'bk');
