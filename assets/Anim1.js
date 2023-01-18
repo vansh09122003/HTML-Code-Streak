@@ -21,21 +21,21 @@ class Anim1 extends Phaser.Scene{
         this.bottom.setVelocityY(-50);
     }
     update(){
-        if(Math.floor(this.leftHand.x)==700){
+        if(Math.floor(this.leftHand.x)>=700){
             this.leftHand.setVelocityX(0);
         }
-        if(Math.floor(this.rightHand.x)==700){
+        if(Math.floor(this.rightHand.x)<=700){
             this.rightHand.setVelocityX(0);
         }
-        if(Math.floor(this.top.y)==400){
+        if(Math.floor(this.top.y)>=400){
             this.top.setVelocityY(0);
         }
-        if(Math.floor(this.bottom.y)==400){
+        if(Math.floor(this.bottom.y)<=400){
             console.log("bottom");
             this.bottom.setVelocityY(0);
         }
-        if(Math.floor(this.leftHand.x)==700 && Math.floor(this.rightHand.x)==700 && 
-            Math.floor(this.bottom.y)==400 && Math.floor(this.top.y)==400){
+        if(Math.floor(this.leftHand.x)>=700 && Math.floor(this.rightHand.x)<=700 && 
+            Math.floor(this.bottom.y)<=400 && Math.floor(this.top.y)>=400){
             this.scene.switch('Anim2');
         }
     }

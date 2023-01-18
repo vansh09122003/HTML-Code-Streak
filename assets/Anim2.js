@@ -1,6 +1,6 @@
-class Anim3 extends Phaser.Scene{
+class Anim2 extends Phaser.Scene{
     constructor(){
-        super("Anim3");
+        super("Anim2");
     }
 
     preload(){
