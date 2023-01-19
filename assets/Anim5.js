@@ -5,6 +5,7 @@ class Anim5 extends Phaser.Scene{
     preload(){
         this.load.image('Girl','assets/WingGirl.png')
         this.load.image('bk','assets/Background_2.png');
+        this.load.image('logo','assets/Logo.png');
     }
     create(){
         this.add.image(500,400,'bk');
@@ -18,10 +19,17 @@ class Anim5 extends Phaser.Scene{
 		});
         this.physics.world.enableBody(this.mainText);
         this.mainText.body.setVelocityX(100);
+        this.add.image(1300,100,'logo').setScale(1);
     }
     update(){
         if(Math.floor(this.mainText.body.x)>=100){
             this.mainText.body.setVelocityX(0);
+        }
+        if(Math.floor(this.Girl.x)>=900){
+            this.Girl.setVelocityX(0);
+        }
+        if(Math.floor(this.Girl.x)>=900){
+            this.scene.switch('Anim6');
         }
     }
 }

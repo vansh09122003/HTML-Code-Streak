@@ -15,10 +15,10 @@ class Anim1 extends Phaser.Scene{
         this.rightHand=this.physics.add.image(1400,400,"rightHand").setScale(0.5);
         this.top=this.physics.add.image(700,0,"top").setScale(0.5);
         this.bottom=this.physics.add.image(700,800,"bottom").setScale(0.5);
-        this.rightHand.setVelocityX(-100);
-        this.leftHand.setVelocityX(100);
-        this.top.setVelocityY(50);
-        this.bottom.setVelocityY(-50);
+        this.rightHand.setVelocityX(-200);
+        this.leftHand.setVelocityX(200);
+        this.top.setVelocityY(100);
+        this.bottom.setVelocityY(-100);
     }
     update(){
         if(Math.floor(this.leftHand.x)>=700){

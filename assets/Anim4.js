@@ -5,6 +5,7 @@ class Anim4 extends Phaser.Scene{
     preload(){
         this.load.image('bk','assets/Background_2.png');
         this.load.image('girl','assets/Girl_education.png');
+        this.load.image('logo','assets/Logo.png');
     }
     create(){
         this.add.image(500,400,'bk');
@@ -21,6 +22,7 @@ class Anim4 extends Phaser.Scene{
         this.point5 = this.add.text(-1000, 300, '->  Adoring a Girl Child:- Contact Us', { fontSize: '32px', fill: '#DF9B00'});
         this.physics.world.enableBody(this.point5);
         this.add.image(1200,600,'girl').setScale(0.15);
+        this.add.image(1300,100,'logo').setScale(1);
         this.heading();
     }
     update(){
@@ -46,6 +48,11 @@ class Anim4 extends Phaser.Scene{
         }
         if(Math.floor(this.point5.body.x)>=120){
             this.point5.body.setVelocityX(0);
+            this.scene.switch('Anim5');
+        }
+        if(Math.floor(this.mainText.body.x)>=100 && Math.floor(this.point1.body.x)>=120 && 
+            Math.floor(this.point2.body.x)>=120 && Math.floor(this.point3.body.x)>=120 && 
+            Math.floor(this.point4.body.x)>=120 && Math.floor(this.point5.body.x)>=120){
             this.scene.switch('Anim5');
         }
     }
