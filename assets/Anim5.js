@@ -29,7 +29,12 @@ class Anim5 extends Phaser.Scene{
             this.Girl.setVelocityX(0);
         }
         if(Math.floor(this.Girl.x)>=900){
-            this.scene.switch('Anim6');
+            this.time.addEvent({
+                delay: 2000,
+                callback: ()=> {window.location.href = "assets/GiveHerWings.html";},
+                callbackScope: this,
+                loop: false
+            }); 
         }
     }
 }

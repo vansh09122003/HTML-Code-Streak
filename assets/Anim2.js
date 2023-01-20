@@ -44,7 +44,12 @@ class Anim2 extends Phaser.Scene{
         }
         if(Math.floor(this.blue.x)>=900 && Math.floor(this.green.x)<=500 && 
             Math.floor(this.red.y)<=700 && Math.floor(this.yellow.y)>=100){
-            this.scene.switch('Anim4');
+            this.time.addEvent({
+                delay: 2000,
+                callback: ()=> {this.scene.switch('Anim3')},
+                callbackScope: this,
+                loop: false
+            });     
         }
     }
    
