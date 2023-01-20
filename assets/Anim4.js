@@ -9,23 +9,37 @@ class Anim4 extends Phaser.Scene{
     }
     create(){
         this.add.image(500,400,'bk');
-        this.mainText=this.add.text(-1000, 20, 'What We Do?', { fontSize: '48px', fill: '#DF9B00'});
+        this.mainText1=this.add.text(-1000, 20, 'Our Mission:', { fontSize: '48px', fill: '#DF9B00'});
+        this.physics.world.enableBody(this.mainText1);
+        this.point6=this.add.text(60, 100, 'We strives to Educate and Empower Women across the Globe. \n“TO BE THE CHANGE - by educating Women"\nThus, building a Nation with a strong rigid backbone who can further \nbuild a sustainable generation.',{
+			fontFamily: 'cursive',
+			fontSize: '32px',
+			color: '#DF9B00',
+		});
+        
+        this.mainText=this.add.text(-1000, 300, 'How You Can Help:', { fontSize: '48px', fill: '#DF9B00'});
         this.physics.world.enableBody(this.mainText);
-        this.point1 = this.add.text(-1000, 100, '->  Education Help:- 10Rs', { fontSize: '32px', fill: '#DF9B00'});
+        this.point1 = this.add.text(-1000, 400, '->  Education Help:- 10Rs', { fontSize: '32px', fill: '#DF9B00'});
         this.physics.world.enableBody(this.point1);
-        this.point2 = this.add.text(-1000, 150, '->  Educating and Empowering Women:- 501Rs', { fontSize: '32px', fill: '#DF9B00'});
+        this.point2 = this.add.text(-1000, 450, '->  Educating and Empowering Women:- 501Rs', { fontSize: '32px', fill: '#DF9B00'});
         this.physics.world.enableBody(this.point2);
-        this.point3 = this.add.text(-1000, 200, '->  One Girl Child One Month Education Help:- 1100Rs', { fontSize: '32px', fill: '#DF9B00'});
+        this.point3 = this.add.text(-1000, 500, '->  One Girl Child One Month Education Help:- 1100Rs', { fontSize: '32px', fill: '#DF9B00'});
         this.physics.world.enableBody(this.point3);
-        this.point4 = this.add.text(-1000, 250, '->  One Girl Child Yearly Education Help:- 11000Rs', { fontSize: '32px', fill: '#DF9B00'});
+        this.point4 = this.add.text(-1000, 550, '->  One Girl Child Yearly Education Help:- 11000Rs', { fontSize: '32px', fill: '#DF9B00'});
         this.physics.world.enableBody(this.point4);
-        this.point5 = this.add.text(-1000, 300, '->  Adoring a Girl Child:- Contact Us', { fontSize: '32px', fill: '#DF9B00'});
+        this.point5 = this.add.text(-1000, 600, '->  Adoring a Girl Child:- Contact Us', { fontSize: '32px', fill: '#DF9B00'});
         this.physics.world.enableBody(this.point5);
         this.add.image(1200,600,'girl').setScale(0.15);
         this.add.image(1300,100,'logo').setScale(1);
         this.heading();
+        this.heading1();
     }
     update(){
+        if(Math.floor(this.mainText1.body.x)>=100){
+            this.mainText1.body.setVelocityX(0);
+            this.help1();
+        }
+
         if(Math.floor(this.mainText.body.x)>=100){
             this.mainText.body.setVelocityX(0);
             this.help1();
@@ -56,6 +70,10 @@ class Anim4 extends Phaser.Scene{
             this.scene.switch('Anim5');
         }
     }
+    heading1(){
+        this.mainText1.body.setVelocityX(350);
+    }
+
     heading(){
         this.mainText.body.setVelocityX(350);
     }
